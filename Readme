@@ -1,0 +1,26 @@
+project
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── ecommerce
+│   │   │           ├── pages
+│   │   │           │   ├── LoginPage.java
+│   │   │           │   └── CartPage.java
+│   │   │           ├── api
+│   │   │           │   └── ApiClient.java
+│   │   │           └── mobile
+│   │   │               └── MobileHomePage.java
+│   ├── test
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── ecommerce
+│   │   │           ├── tests
+│   │   │           │   ├── WebTests.java
+│   │   │           │   ├── ApiTests.java
+│   │   │           │   └── MobileTests.java
+│   │   │           └── config
+│   │   │               └── TestConfig.java
+├── Jenkinsfile
+└── README.md
