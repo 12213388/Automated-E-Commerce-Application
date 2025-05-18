@@ -1,0 +1,43 @@
+package com.ecommerce.config;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class TestConfig {
+    protected WebDriver webDriver;
+    protected AppiumDriver mobileDriver;
+
+    @BeforeMethod
+    public void setUpWeb() {
+        webDriver = new ChromeDriver();
+        webDriver.get("https://www.saucedemo.com");
+    }
+
+    @BeforeMethod
+    public void setUpMobile() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("automationName", "UiAutomator2");
+        caps.setCapability("deviceName", "emulator-5554");
+        caps.setCapability("app", "/path/to/your/app.apk");
+        mobileDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (webDriver != null) {
+            webDriver.quit();
+        }
+        if (mobileDriver != null) {
+            mobileDriver.quit();
+        }
+    }
+}
