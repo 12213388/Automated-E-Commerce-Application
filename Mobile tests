@@ -1,0 +1,15 @@
+package com.ecommerce.tests;
+
+import com.ecommerce.config.TestConfig;
+import com.ecommerce.mobile.MobileHomePage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class MobileTests extends TestConfig {
+
+    @Test
+    public void testMobileHomePage() {
+        MobileHomePage homePage = new MobileHomePage(mobileDriver);
+        Assert.assertTrue(homePage.isProductListDisplayed(), "Product list not displayed!");
+    }
+}
