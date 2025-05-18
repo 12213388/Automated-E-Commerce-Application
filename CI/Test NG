@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EcommerceTestSuite">
+    <test name="WebTests">
+        <classes>
+            <class name="com.ecommerce.tests.WebTests"/>
+        </classes>
+    </test>
+    <test name="ApiTests">
+        <classes>
+            <class name="com.ecommerce.tests.ApiTests"/>
+        </classes>
+    </test>
+    <test name="MobileTests">
+        <classes>
+            <class name="com.ecommerce.tests.MobileTests"/>
+        </classes>
+    </test>
+</suite>
