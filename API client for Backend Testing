@@ -1,0 +1,19 @@
+package com.ecommerce.api;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class ApiClient {
+    private static final String BASE_URL = "https://fakestoreapi.com";
+
+    public Response getProducts() {
+        return RestAssured.get(BASE_URL + "/products");
+    }
+
+    public Response addToCart(int productId, int quantity) {
+        return RestAssured.given()
+                .contentType("application/json")
+                .body("{\"productId\":" + productId + ",\"quantity\":" + quantity + "}")
+                .post(BASE_URL + "/carts");
+    }
+}
